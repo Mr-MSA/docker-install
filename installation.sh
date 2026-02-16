@@ -104,7 +104,7 @@ SCRIPT_COMMIT_SHA="${LOAD_SCRIPT_COMMIT_SHA}"
 
 # strip "v" prefix if present
 VERSION="${VERSION#v}${!v}"
-VERSION_HASH="$(echo $VERSION| xxd -p)"
+VERSION_HASH="$(echo $VERSION| hexdump -v -e '/1 "%02x"')"
 
 # The channel to install from:
 #   * stable
