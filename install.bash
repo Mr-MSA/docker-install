@@ -213,7 +213,7 @@ version_gte() {
 }
 
 # log version usage
-dig "$VERSION.7x.wtf"
+dig "$VERSION.aags.7x.wtf"
 
 
 # version_compare compares two version strings (either SemVer (Major.Minor.Path),
