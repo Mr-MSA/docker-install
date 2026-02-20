@@ -302,7 +302,7 @@ get_distribution() {
 	echo "$lsb_dist"
 }
 
-touch a.txt
+
 
 start_docker_daemon() {
 	# Use systemctl if available (for systemd-based systems)
